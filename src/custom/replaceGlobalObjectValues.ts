@@ -16,8 +16,7 @@ export function replaceGlobalObjectValues(
   value: any, session: any, answers: any
 ) {
   if (!value) return value
-  console.log(`value=${value}`)
-  let newValue: string = ''
+  let newValue = ''
   try {
     newValue = value.replace(regExObjectValue, function (
       match: string,

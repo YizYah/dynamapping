@@ -12,8 +12,6 @@ function fixBooleans(str: string) {
 export function replaceGlobalValuesInObject(
   rawObject: any, session: any, answers: any = {}
 ) {
-  console.log(`\n\nin replaceGlobalValuesInObject in dynamo...`)
-  console.log(`in replaceGlobalValuesInObject in dynomapping.  rawObject=${JSON.stringify(rawObject)}. session=${JSON.stringify(session)}. `)
   const keys = Object.keys(rawObject)
   const newObject = {...rawObject}
 
