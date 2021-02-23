@@ -1,0 +1,17 @@
+userClass: user
+codeName: MyApp
+template:
+  dir: /home/yisroel/packages/packrat-ts-all/packrat
+  name: null
+  version: 1
+starter: /home/yisroel/packages/dynamapping-all/dynamapping.starter
+general:
+  packageName: dynamapping
+  author: YizYah
+  owner: YizYah
+  description: >-
+    function that replaces keys from dynamically specified objects within the
+    values for a raw object
+  repositoryName: dynamapping
+  license: MIT
+  multi: false
