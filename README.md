@@ -67,7 +67,7 @@ object = dynamapping( object, session, {})
 Notes: 
 
 1. `object` currently needs to be of depth 1 (no recursion is currently implemented.)
-2. you can currently use one of two mappings: `session` and `answer`.  (The `session` object is so named to be generic.  The `answer` object can be useful for an interactive session, for instance using [inquirer](https://www.npmjs.com/package/inquirer)).
+2. You can currently use one of two mappings: `session` and `answer`.  (The `session` object is so named to be generic.  The `answer` object can be useful for an interactive session, for instance using [inquirer](https://www.npmjs.com/package/inquirer)).
 
 [//]: # ( ns__custom_end APIIntro )
 
