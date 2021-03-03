@@ -8,7 +8,7 @@
     "lint": "eslint \"src/**/*.ts\"",
     "lintfix": "eslint \"src/**/*.ts\" --fix",
     "test": "ava",
-    "posttest": "eslint \"src/**/*.ts\"",
+    "posttest": "nyc --extension .ts ava --forbid-only && eslint \"src/**/*.ts\"",
     "prepack": "rm -rf lib && tsc -b"
   },
   "keywords": [
