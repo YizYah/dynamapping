@@ -8,9 +8,7 @@
 [//]: # ( ns__start_section intro )
 
 [//]: # ( ns__custom_start description )
-dynamapping
-======
-function that replaces keys from dynamically specified objects within the values for a raw object
+A function that replaces keys from dynamically specified objects within the values for a raw object
 
 ![dynamapping](src/images/dynamapping.gif)
 
@@ -59,15 +57,25 @@ Include the function with
 npm i dynamapping
 ```
 
-Then you can include it as follows:
+You can insert a string in the form `__session.<key>__` and then dynamically set the `session` object to have a <key> value that will be replaced.  For instance,
 ```
 const dynamapping = require('dynamapping')
-object = dynamapping( object, session, {})
+const session = {
+		userName: 'Filbert'
+	}
+let obj = {
+		hello: 'hi __session.userName__'
+	};
+obj = dynamapping( obj, session, {})
+
+// obj will be set to { hello: 'hi Filbert' }
 ```
+
 Notes: 
 
 1. `object` currently needs to be of depth 1 (no recursion is currently implemented.)
 2. You can currently use one of two mappings: `session` and `answer`.  (The `session` object is so named to be generic.  The `answer` object can be useful for an interactive session, for instance using [inquirer](https://www.npmjs.com/package/inquirer)).
+3. if you set a value in `session` (or `answers`) to `'true'` or `'false'` then dynamapping will assume that you intended the boolean value and will return the boolean `true` or `false` respectively.
 
 [//]: # ( ns__custom_end APIIntro )
 
