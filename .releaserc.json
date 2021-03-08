@@ -1,0 +1,10 @@
+{
+  "branches": [
+    "+([1-9])?(.{+([1-9]),x}).x",
+    "main",
+    "next",
+    "next-major"
+  ],
+  "plugins": [
+  ]
+}
