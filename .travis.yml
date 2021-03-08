@@ -1,10 +1,23 @@
 language: node_js
 
-node_js:
-  - "lts/*"
-
-script:
-  - "npm i"
-  - "npm run build"
-  - "npm run lint"
-  - "npm run test"
+jobs:
+  include:
+    - stage: test
+      node_js:
+        - lts/*
+      script:
+        - "npm i"
+        - "npm run build"
+        - "npm run lint"
+        - "npm run test"
+    - stage: release
+      node_js: lts/*
+      script:
+        - yarn build
+      deploy:
+        provider: script
+        skip_cleanup: true
+        on:
+          all_branches: true
+        script:
+          - semantic-release
