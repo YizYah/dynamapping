@@ -52,12 +52,12 @@ You may want to update objects retrieved from a static source (such as a file) u
 A single function that you can pass in a flat object to and replace strings in the object values with your session values.
 
 # <a name="bulb-how"></a>:bulb: How
-Include the function with 
+Include the function: 
 ```
 npm i dynamapping
 ```
 
-You can insert a string in the form `__session.<key>__` and then dynamically set the `session` object to have a <key> value that will be replaced.  For instance,
+You can insert into the values for keys of a given object a string in the form `__session.<key>__`.  Then, dynamically set the `session` object to have a <key> value that will be replaced when you call `dynamapping`.  For instance,
 ```
 const dynamapping = require('dynamapping')
 const session = {
