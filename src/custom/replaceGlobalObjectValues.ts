@@ -10,7 +10,7 @@ const globalObjects = {
 
 /*
   replaces any global objects.  Also set up to take answers so that you can use it
-  with inquirer globally.
+  with inquirer globally.  The answers object is optional.
  */
 export function replaceGlobalObjectValues(
   value: any, session: any, answers: any = {}

@@ -15,6 +15,28 @@ test('returns for session', async t => {
 	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj, ansObj), { testCase: 'hi Filbert' });
 });
 
+test('tests replace of number', async t => {
+	const obj = {
+		amount: '__session.amount__'
+	};
+	const sessionObj = {
+		userName: 'Filbert',
+		amount: 5
+	}
+	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj), { amount: 5});
+});
+
+test('tests replace of number in string', async t => {
+	const obj = {
+		amount: '__session.amount__ dollars'
+	};
+	const sessionObj = {
+		userName: 'Filbert',
+		amount: 5
+	}
+	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj), { amount: '5 dollars'});
+});
+
 test('tests replace of "true"', async t => {
 	const obj = {
 		testCase: '__session.isTrue__'
@@ -27,6 +49,20 @@ test('tests replace of "true"', async t => {
 		ANSWERS: 'answers'
 	}
 	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj, ansObj), { testCase: true });
+});
+
+test('tests replace of "true" in a string', async t => {
+	const obj = {
+		testCase: 'it is __session.isTrue__ now'
+	};
+	const sessionObj = {
+		userName: 'Filbert',
+		isTrue: 'true'
+	}
+	const ansObj = {
+		ANSWERS: 'answers'
+	}
+	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj, ansObj), { testCase: 'it is true now' });
 });
 
 test('test replace of "false"', async t => {

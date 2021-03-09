@@ -1,10 +1,13 @@
 import {replaceGlobalObjectValues} from './replaceGlobalObjectValues'
 
-function fixBooleans(str: string) {
+function fixNonStrings(str: string) {
   // assumes that a 'true' or 'false' is meant to be a boolean.
   if (str === 'true') return true
   if (str === 'false') return false
-  return str
+
+  const numberVersion = Number(str)
+  if (isNaN(numberVersion)) return str
+  return numberVersion
 }
 
 // takes in a raw object (of depth 1) and replaces any session variables there.
@@ -22,7 +25,7 @@ export function replaceGlobalValuesInObject(
     newObject[key] = replaceGlobalObjectValues(
       value, session, answers
     )
-    if (value !== newObject[key]) newObject[key] = fixBooleans(newObject[key])
+    if (value !== newObject[key]) newObject[key] = fixNonStrings(newObject[key])
   })
 
   return newObject

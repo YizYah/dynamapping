@@ -87,6 +87,8 @@ Notes:
   obj replaceGlobalValuesInObject(obj, sessionObj, ansObj)
   // obj = {testCase: false} rather than {testCase: 'false'}
 ```
+But if it's embedded within a larger string, it will remain a string e.g. `'it is __session.isTrue__ now!`
+4.Numbers are treated the same way.  If you have a key set to a single number, then it will remain a number.
 
 [//]: # ( ns__custom_end APIIntro )
 
