@@ -25,11 +25,11 @@ export function replaceGlobalObjectValues(
     ) {
       if (objectName === globalObjects.ANSWERS) return answers[key]
       if (objectName === globalObjects.SESSION) return session[key]
-      // if (objectName === globalObjects.SETTINGS) return nsInfo[key]
+      throw new Error(`trying to replace an unrecognized object type: '${objectName}'`)
     })
 
   } catch (error) {
-    throw new Error(`trying to replace regExObjectValue ${regExObjectValue} in value ${JSON.stringify(value)}`)
+    throw error
   }
 
   return newValue

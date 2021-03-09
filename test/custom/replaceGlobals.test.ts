@@ -58,6 +58,34 @@ test('test does not leave "false" as a string', async t => {
 	t.notDeepEqual(replaceGlobalValuesInObject(obj, sessionObj, ansObj), { testCase: 'false' });
 });
 
+
+test('test no answers parameter', async t => {
+	const obj = {
+		testCase: '__session.isTrue__'
+	};
+	const sessionObj = {
+		userName: 'Filbert',
+		isTrue: 'false'
+	}
+	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj), { testCase: false });
+});
+
+test('faulty object key', t => {
+	const obj = {
+		testCase: '__nonexistent.isTrue__'
+	};
+	const sessionObj = {
+		userName: 'Filbert',
+		isTrue: 'false'
+	}
+	const error = t.throws(() => {
+		replaceGlobalValuesInObject(obj, sessionObj);
+	}, undefined);
+
+	t.is(error.message, 'trying to replace an unrecognized object type: \'nonexistent\'');
+});
+
+
 test('no matches', async t => {
 	const obj = {
 		state: 'true'
