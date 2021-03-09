@@ -23,6 +23,13 @@ test('answers not required', async t => {
 	}
 );
 
+//
+// test('session and answers not required', async t => {
+// 		const value = 'hi __session.userName__'
+// 		t.deepEqual(replaceGlobalObjectValues(value), 'hi __session.userName__');
+// 	}
+// );
+
 
 test('no value', async t => {
 		const value = null

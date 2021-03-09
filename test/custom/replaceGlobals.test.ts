@@ -95,7 +95,7 @@ test('test does not leave "false" as a string', async t => {
 });
 
 
-test('test no answers parameter', async t => {
+test('no answers parameter', async t => {
 	const obj = {
 		testCase: '__session.isTrue__'
 	};
@@ -104,6 +104,13 @@ test('test no answers parameter', async t => {
 		isTrue: 'false'
 	}
 	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj), { testCase: false });
+});
+
+test('no sessions and answers parameters', async t => {
+	const obj = {
+		testCase: '__session.isTrue__'
+	};
+	t.deepEqual(replaceGlobalValuesInObject(obj), { testCase: '__session.isTrue__' });
 });
 
 test('null value', async t => {

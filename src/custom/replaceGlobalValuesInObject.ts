@@ -13,8 +13,14 @@ function fixNonStrings(str: string) {
 // takes in a raw object (of depth 1) and replaces any session variables there.
 // Not currently recursive.
 export function replaceGlobalValuesInObject(
-  rawObject: any, session: any, answers: any = {}
+  rawObject: any, session: any = {}, answers: any = {}
 ) {
+
+  if (Object.keys(session).length === 0
+    && Object.keys(answers).length === 0) {
+    return rawObject
+  }
+
   const keys = Object.keys(rawObject)
   const newObject = {...rawObject}
 
