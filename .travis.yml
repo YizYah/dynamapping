@@ -11,7 +11,7 @@ jobs:
     - stage: release
       node_js: lts/*
       script:
-        - yarn build
+        - npm build
       deploy:
         provider: script
         skip_cleanup: true
