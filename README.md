@@ -8,7 +8,7 @@
 [//]: # ( ns__start_section intro )
 
 [//]: # ( ns__custom_start description )
-A function that replaces keys from dynamically specified objects within the values for a raw object
+A function that replaces keys from dynamically specified objects within the values for a raw object.
 
 ![dynamapping](src/images/dynamapping.gif)
 
