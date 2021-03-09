@@ -75,7 +75,18 @@ Notes:
 
 1. `object` currently needs to be of depth 1 (no recursion is currently implemented.)
 2. You can currently use one of two mappings: `session` and `answer`.  (The `session` object is so named to be generic.  The `answer` object can be useful for an interactive session, for instance using [inquirer](https://www.npmjs.com/package/inquirer)).
-3. if you set a value in `session` (or `answers`) to `'true'` or `'false'` then dynamapping will assume that you intended the boolean value and will return the boolean `true` or `false` respectively.
+3. if you set a value in `session` (or `answers`) to `'true'` or `'false'` then `dynamapping` will assume that you intended the boolean value and will return the boolean `true` or `false` respectively.  For instance:
+```
+  const obj = {
+		testCase: '__session.isTrue__'
+	};
+  const sessionObj = {
+		userName: 'Filbert',
+		isTrue: 'false'
+	}
+  obj replaceGlobalValuesInObject(obj, sessionObj, ansObj)
+  // obj = {testCase: false} rather than {testCase: 'false'}
+```
 
 [//]: # ( ns__custom_end APIIntro )
 
