@@ -70,6 +70,30 @@ test('test no answers parameter', async t => {
 	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj), { testCase: false });
 });
 
+test('null value', async t => {
+	const obj = {
+		testCase: null
+	};
+	const sessionObj = {
+		userName: 'Filbert',
+		isTrue: 'false'
+	}
+	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj), { testCase: null });
+});
+
+
+test('non-string value', async t => {
+	const obj = {
+		testCase: 1
+	};
+	const sessionObj = {
+		userName: 'Filbert',
+		isTrue: 'false'
+	}
+	t.deepEqual(replaceGlobalValuesInObject(obj, sessionObj), { testCase: 1 });
+});
+
+
 test('faulty object key', t => {
 	const obj = {
 		testCase: '__nonexistent.isTrue__'

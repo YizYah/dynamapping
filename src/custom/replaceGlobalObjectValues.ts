@@ -13,7 +13,7 @@ const globalObjects = {
   with inquirer globally.
  */
 export function replaceGlobalObjectValues(
-  value: any, session: any, answers: any
+  value: any, session: any, answers: any = {}
 ) {
   if (!value) return value
   let newValue = ''
