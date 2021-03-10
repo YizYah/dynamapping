@@ -1,6 +1,6 @@
 {
   "name": "dynamapping",
-  "version": "0.0.0-development",
+  "version": "1.2.1",
   "description": "function that replaces keys from dynamically specified objects within the values for a raw object",
   "main": "lib/index.js",
   "scripts": {
