@@ -15,7 +15,8 @@ export function replaceGlobalValuesInObject(
 
   keys.map((key: string) => {
     const value = rawObject[key]
-    if ((typeof value) !== 'string') return
+    if (value === null) return value
+    if ((typeof value) !== 'string') return value
 
     newObject[key] = replaceGlobalObjectValues(
       value, session, answers

@@ -1,7 +1,7 @@
 {
   "name": "dynamapping",
   "version": "1.2.1",
-  "description": "function that replaces keys from dynamically specified objects within the values for a raw object",
+  "description": "replaces keys dynamically within the values for a raw, flat object",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
@@ -19,7 +19,10 @@
     }
   },
   "keywords": [
-    "ts-packrat"
+    "ts-packrat",
+    "dynamic",
+    "replacement",
+    "values"
   ],
   "author": "YizYah",
   "license": "MIT",

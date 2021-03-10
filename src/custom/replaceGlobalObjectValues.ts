@@ -10,6 +10,13 @@ const globalObjects = {
   CONFIG: 'config',
 }
 
+
+function convertIfObject(value: any){
+  if ((typeof value) === 'object') return JSON.stringify(value)
+  return value
+
+}
+
 /*
   replaces any global objects.  Also set up to take answers so that you can use it
   with inquirer globally.  The answers object is optional.
@@ -31,8 +38,8 @@ export function replaceGlobalObjectValues(
       objectName: string,
       key: string,
     ) {
-      if (objectName === globalObjects.ANSWERS) return answers[key]
-      if (objectName === globalObjects.SESSION) return session[key]
+      if (objectName === globalObjects.ANSWERS) return convertIfObject(answers[key])
+      if (objectName === globalObjects.SESSION) return convertIfObject(session[key])
       throw new Error(`trying to replace an unrecognized object type: '${objectName}'`)
     })
 

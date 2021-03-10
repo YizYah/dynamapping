@@ -28,7 +28,7 @@ test('returns for stringified object', async t => {
 );
 
 
-test.skip('returns for raw object', async t => {
+test('returns for raw object', async t => {
 		const value = '__session.userInfo__'
 		const sessionObj = {
 			userName: 'Filbert',
@@ -37,7 +37,6 @@ test.skip('returns for raw object', async t => {
 				city: 'Bangkok'
 			},
 		}
-		console.log(`\n${JSON.stringify(sessionObj.userInfo)}`)
 		t.deepEqual(replaceGlobalObjectValues(value, sessionObj), {
 			id: '123',
 			city: 'Bangkok'
