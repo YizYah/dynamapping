@@ -13,8 +13,14 @@ const globalObjects = {
   with inquirer globally.  The answers object is optional.
  */
 export function replaceGlobalObjectValues(
-  value: any, session: any, answers: any = {}
+  value: any, session: any = {}, answers: any = {}
 ) {
+
+  if (Object.keys(session).length === 0
+    && Object.keys(answers).length === 0) {
+    return value
+  }
+
   if (!value) return value
   let newValue = ''
   try {
