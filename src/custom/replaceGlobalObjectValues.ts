@@ -1,3 +1,5 @@
+import {fixValueIfChanged} from './fixValueIfChanged'
+
 const {regExObjectValueString} = require('magicalstrings').constants.Regex.regExObjectValueString
 
 const regExObjectValue = new RegExp(regExObjectValueString, 'g')
@@ -38,5 +40,6 @@ export function replaceGlobalObjectValues(
     throw error
   }
 
-  return newValue
+  return fixValueIfChanged(value,newValue)
 }
+

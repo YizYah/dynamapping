@@ -46,10 +46,14 @@ A function that replaces keys from dynamically specified objects within the valu
 <!-- tocstop -->
 
 # <a name="clipboard-why"></a>:clipboard: Why
-You may want to update objects retrieved from a static source (such as a file) using a session with dynamically set values. It's a pain to set up the logic of mapping through session data and calling replace.
+You may want to update objects retrieved from a static source (such as a file) using a session with *dynamically* set values. It's a pain to set up the logic of mapping through session data and calling replace.
 
 # <a name="white_check_mark-what"></a>:white_check_mark: What
 A single function that you can pass in a flat object to and replace strings in the object values with your session values.
+
+Your replacements (the values in your `session` object) can include a string, a number, a boolean, or a JSON-stringified object. `dynomapping` will determine the intended type as follows:
+1. A boolean or a string of a boolean will be converted to a boolean unless it is contained in a larger string
+2. Similar treatment is done for valid number strings or JSON stringifications.
 
 # <a name="bulb-how"></a>:bulb: How
 Include the function: 

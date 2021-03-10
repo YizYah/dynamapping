@@ -11,7 +11,7 @@
     "test": "ava",
     "posttest": "nyc --extension .ts ava --forbid-only && eslint \"src/**/*.ts\"",
     "prepack": "rm -rf lib && tsc -b",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
     "commitizen": {
