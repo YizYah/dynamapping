@@ -22,6 +22,7 @@ A function that replaces keys from dynamically specified objects within the valu
 
 [//]: # ( ns__start_section usageSection )
 
+[![codecov](https://app.codecov.io/gh/YizYah/dynamapping/branch/master/graph/badge.svg)](https://app.codecov.io/gh/YizYah/dynamapping)
 [![Version](https://img.shields.io/npm/v/dynamapping.svg)](https://npmjs.org/package/dynamapping)
 [![Downloads/week](https://img.shields.io/npm/dw/dynamapping.svg)](https://npmjs.org/package/dynamapping)
 [![License](https://img.shields.io/npm/l/dynamapping.svg)](https://github.com/YizYah/dynamapping/blob/master/package.json)

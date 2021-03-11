@@ -9,7 +9,7 @@
     "lint": "eslint \"src/**/*.ts\"",
     "lintfix": "eslint \"src/**/*.ts\" --fix",
     "test": "ava",
-    "posttest": "nyc --extension .ts ava --forbid-only && eslint \"src/**/*.ts\"",
+    "posttest": "nyc --extension .ts ava --forbid-only && nyc report --reporter=json && eslint \"src/**/*.ts\"",
     "prepack": "rm -rf lib && tsc -b",
     "semantic-release": "semantic-release"
   },

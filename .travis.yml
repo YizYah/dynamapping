@@ -1,5 +1,11 @@
 language: node_js
 
+scripts:
+  - npm install codecov -g
+
+after_success:
+  - codecov
+
 branches:
   only:
     - main
@@ -23,3 +29,4 @@ jobs:
           all_branches: true
         script:
           - npx semantic-release
+
