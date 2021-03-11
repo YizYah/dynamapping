@@ -8,6 +8,6 @@ import {temp} from './custom/temp'
 
 /* ns__custom_start export */
 // replace this with your own export
-temp()
+// temp()
 module.exports = replaceGlobalValuesInObject
 /* ns__custom_end export */
